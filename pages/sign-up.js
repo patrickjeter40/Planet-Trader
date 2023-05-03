@@ -1,72 +1,86 @@
-
-import * as React from 'react';
-import clientPromise from "../lib/mongodb";
-import Link from 'next/link'
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
+import Input from '@mui/material/Input';
+import InputLabel from '@mui/material/InputLabel';
 import Button from '@mui/material/Button';
+import FormControl from '@mui/material/FormControl';
 
-export default function SignUp() {
-    
-  return (
-    
-    <>
-        <div class="main">
-            <Box 
-            className="test"
-            sx={{
-                typography: 'body1',
-                '& > :not(style) + :not(style)': {
-                ml: 2,
-                },
-            }}
-            
-            >
-                <nav>
-                    <Link href="/">Home</Link>
-                    <Link href="#">
-                        About
-                    </Link>
-                    <Link href="/posts/sign_up" >
-                        Sign Up
-                    </Link>
-                </nav>
-            
-            </Box>
-            <div>
-                <TextField id="standard-basic" label="First Name" variant="standard" />
-                <TextField id="standard-basic" label="Last Name" variant="standard" />
-            </div>
-            <div>
-                <TextField id="standard-basic" label="Email" variant="standard" />
-                <TextField id="standard-basic" label="Phone" variant="standard" />
-            </div>
 
-            <Button variant="contained">Submit</Button>
-
-        </div>
-    </>
-  );
+export default function PageWithJSbasedForm() {
+    // Handles the submit event on form submit.
+    const handleSubmit = async (event) => {
+      // Stop the form from submitting and refreshing the page.
+      event.preventDefault()
   
-}
+      // Get data from the form.
+      const data = {
+        firstn: event.target.firstn.value,
+        lastn: event.target.lastn.value,
+      }
+  
+      // Send the data to the server in JSON format.
+      const JSONdata = JSON.stringify(data)
+  
+      // API endpoint where we send form data.
+      const endpoint = '/api/form'
+  
+      // Form the request for sending data to the server.
+      const options = {
+        // The method is POST because we are sending data.
+        method: 'POST',
+        // Tell the server we're sending JSON.
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        // Body of the request is the JSON data we created above.
+        body: JSONdata,
+      }
+  
+      // Send the form data to our forms API on Vercel and get a response.
+      const response = await fetch(endpoint, options)
+  
+      // Get the response data from server as JSON.
+      // If server returns the name submitted, that means the form works.
+      const result = await response.json()
 
-
-export async function getServerSideProps() {
-  try {
-      const client = await clientPromise;
-      const db = client.db("sample_mflix");
-
-      const movies = await db
-          .collection("movies")
-          .find({})
-          .sort({ metacritic: -1 })
-          .limit(20)
-          .toArray();
-
-      return {
-          props: { movies: JSON.parse(JSON.stringify(movies)) },
-      };
-  } catch (e) {
-      console.error(e);
+      // Check for the redirect property in the JSON response.
+        if (result.redirect) {
+            // Redirect the user to the specified URL.
+            window.location.href = result.redirect
   }
-}
+      
+    }
+    return (
+      // We pass the event to the handleSubmit() function on submit.
+      
+    <div>
+     
+      <form onSubmit={handleSubmit}>
+        <div>
+          <FormControl variant="standard">
+              <InputLabel htmlFor="firstn">First Name</InputLabel>
+              <Input id="firstn" defaultValue="" />
+          </FormControl>
+          <FormControl variant="standard">
+              <InputLabel htmlFor="lastn">Last Name</InputLabel>
+              <Input id="lastn" defaultValue="" />
+          </FormControl>
+        </div>
+      </form>
+        <div id="g_id_onload"
+            data-client_id="392887464032-0ule5ia2h0tbpmnpmamjf0tqdbhmcscc.apps.googleusercontent.com"
+            data-context="signup"
+            data-ux_mode="popup"
+            data-login_uri="http://localhost:3000/sign-up"
+            data-itp_support="true">
+        </div>
+
+        <div class="g_id_signin"
+            data-type="standard"
+            data-shape="rectangular"
+            data-theme="filled_black"
+            data-text="signin_with"
+            data-size="large"
+            data-logo_alignment="left">
+        </div>
+    </div> 
+    )
+  }
