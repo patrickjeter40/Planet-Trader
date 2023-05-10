@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography';
 
 export default function dashboard({ exoplanets }) {
   if (!exoplanets) {
-    return <p>Loading...</p>;
+    return <p>Unable to fetch data...</p>;
   }
   return (
     <div class="main">
@@ -23,15 +23,16 @@ export default function dashboard({ exoplanets }) {
             <Card sx={{ maxWidth: 345 }}>
               <CardMedia
                 sx={{ height: 140 }}
-                image=""
+                image="https://i.imgur.com/o705iVb.png"
                 title=""
+                
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
                 {exoplanet.PLANET}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
-                {exoplanet.MASS}
+                <Typography variant="body2" color="text.secondary" className={exoplanet.Archetype.replace(" ", "")}>
+                {exoplanet.Archetype}
                 </Typography>
               </CardContent>
               <CardActions>
