@@ -5,29 +5,32 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import Link from 'next/link';
 
 
 
-export default function MediaCard() {
+export default function MediaCard({ exoplanet, page }) {
   
   return (
     <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        sx={{ height: 140 }}
-        image=""
-        title=""
-      />
+      <Link href={page}>
+        <CardMedia
+          sx={{ height: 140 }}
+          image="https://i.imgur.com/o705iVb.png"
+          title=""
+        />
+      </Link>
         <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-            Exoplanet
+            {exoplanet.PLANET}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-            Exoplanet description
+            {exoplanet.Archetype}
             </Typography>
         </CardContent>
       <CardActions>
         <Button size="small">Fav</Button>
-        <Button size="small">Learn More</Button>
+        <Button size="small" href={page}>Learn More</Button>
       </CardActions>
     </Card>
   );

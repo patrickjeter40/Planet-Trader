@@ -9,7 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Signin from '../modules/Signin';
 
 
-export default function Header() {
+export default function Header({ title }) {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -24,7 +24,7 @@ export default function Header() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Dashboard
+            {title}
           </Typography>
           <Signin />
         </Toolbar>
