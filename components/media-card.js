@@ -12,7 +12,7 @@ import Link from 'next/link';
 export default function MediaCard({ exoplanet, page }) {
   
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 500 }}>
       <Link href={page}>
         <CardMedia
           sx={{ height: 140 }}
