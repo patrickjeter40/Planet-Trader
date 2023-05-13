@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 body {
     margin: 0px;
 }
@@ -21,4 +23,8 @@ body {
 .link-wrapper a{
     text-decoration: none;
     color: inherit;
+}
+
+.head-logo{
+    flex-grow: 1; 
 }

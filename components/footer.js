@@ -10,30 +10,8 @@ import PopperCard from '../modules/popmenu';
 import Image from 'next/image';
 
 
-export default function Header({ title }) {
+export default function Footer({ title }) {
   const [open, setOpen] = React.useState(false);
-  const anchorRef = React.useRef(null);
-
-  const handleToggle = () => {
-    setOpen((prevOpen) => !prevOpen);
-  };
-  
-  const handleClose = (event) => {
-    if (anchorRef.current && anchorRef.current.contains(event.target)) {
-      return;
-    }
-
-    setOpen(false);
-  };
-
-  function handleListKeyDown(event) {
-    if (event.key === 'Tab') {
-      event.preventDefault();
-      setOpen(false);
-    } else if (event.key === 'Escape') {
-      setOpen(false);
-    }
-  }
 
   // return focus to the button when we transitioned from !open -> open
   const prevOpen = React.useRef(open);
@@ -46,30 +24,12 @@ export default function Header({ title }) {
   }, [open]);
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box 
+    sx={{ flexGrow: 1 }}
+    style={{margin: "10% 0 0 0",}}
+    >
       <AppBar position="static">
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-            ref={anchorRef}
-            id="composition-button"
-            aria-controls={open ? 'composition-menu' : undefined}
-            aria-expanded={open ? 'true' : undefined}
-            aria-haspopup="true"
-            onClick={handleToggle}
-          >
-            <PopperCard
-              open={open}
-              handleClose={handleClose}
-              handleListKeyDown={handleListKeyDown}
-              anchorRef={anchorRef} 
-            />
-            <MenuIcon />
-          </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 0 }}>
             {title}
           </Typography>
@@ -80,10 +40,9 @@ export default function Header({ title }) {
               width={255} // Desired size with correct aspect ratio
               alt="Planet Trader Logo"
               quality={100}
-              style={{objectFit: "none", borderRadius: "30px", margin: "auto auto auto 35%"}}
+              style={{objectFit: "none", borderRadius: "30px", margin: "auto auto auto auto"}}
             />
           </div>
-          <Signin />
         </Toolbar>
       </AppBar>
     </Box>

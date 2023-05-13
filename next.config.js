@@ -1,5 +1,7 @@
 module.exports = {
+  // Other Next.js configurations...
+
   images: {
-    domains: ['localhost:3000'], // Add any other local domains if necessary
+    domains: ['drive.google.com'],
   },
 };

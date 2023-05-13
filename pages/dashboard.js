@@ -1,4 +1,5 @@
 import Header from '../components/header';
+import Footer from '../components/footer';
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -15,14 +16,15 @@ export default function dashboard({ exoplanets }) {
     <div class="main">
       <Header title="Dashboard" />
       <Box sx={{ flexGrow: 1 }} className="grid-mt">
-      <Grid container spacing={2}>
-        {exoplanets.map((exoplanet) => (
-          <Grid item xs={4} key={exoplanet.id}>
-            <MediaCard exoplanet={exoplanet} page="/exo-details" onClick={() => handleCardClick(exoplanet.PLANET)}  />
-          </Grid>
-        ))}
-      </Grid>
-    </Box>
+        <Grid container spacing={2}>
+          {exoplanets.map((exoplanet) => (
+            <Grid item xs={4} key={exoplanet.id}>
+              <MediaCard exoplanet={exoplanet} page="/exo-details" onClick={() => handleCardClick(exoplanet.PLANET)}  />
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
+      <Footer />      
     </div>
   );
 }

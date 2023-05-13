@@ -16,7 +16,7 @@ export default function MediaCard({ exoplanet, page }) {
       <Link href={page}>
         <CardMedia
           sx={{ height: 140 }}
-          image="https://i.imgur.com/o705iVb.png"
+          image="https://drive.google.com/uc?id=1UTmqzmlYJYMFoa4F-QAWPFFiAhdqe1dN"
           title=""
         />
       </Link>
