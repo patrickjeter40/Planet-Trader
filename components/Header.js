@@ -5,8 +5,9 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import Signin from '../modules/Signin';
-import PopperCard from '../modules/popper';
+import Signin from '../modules/signin';
+import PopperCard from '../modules/popmenu';
+import Image from 'next/image';
 
 
 export default function Header({ title }) {
@@ -16,7 +17,7 @@ export default function Header({ title }) {
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
   };
-
+  
   const handleClose = (event) => {
     if (anchorRef.current && anchorRef.current.contains(event.target)) {
       return;
@@ -63,7 +64,6 @@ export default function Header({ title }) {
           >
             <PopperCard
               open={open}
-              handleToggle={handleToggle}
               handleClose={handleClose}
               handleListKeyDown={handleListKeyDown}
               anchorRef={anchorRef} 
@@ -72,7 +72,9 @@ export default function Header({ title }) {
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             {title}
+          
           </Typography>
+          
           <Signin />
         </Toolbar>
       </AppBar>

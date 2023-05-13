@@ -5,9 +5,13 @@ import Paper from '@mui/material/Paper';
 import Popper from '@mui/material/Popper';
 import MenuItem from '@mui/material/MenuItem';
 import MenuList from '@mui/material/MenuList';
+import Link from 'next/link';
+import { useSession, signIn, signOut } from "next-auth/react"
 
 export default function PopperCard(props) {
-  const { open, handleToggle, handleClose, handleListKeyDown, anchorRef } = props;
+  const { open, handleClose, handleListKeyDown, anchorRef } = props;
+  const { data: session } = useSession()
+
   return (
     <Popper
     open={open}
@@ -33,9 +37,15 @@ export default function PopperCard(props) {
             aria-labelledby="composition-button"
             onKeyDown={handleListKeyDown}
             >
-              <MenuItem onClick={handleClose}>Profile</MenuItem>
-              <MenuItem onClick={handleClose}>My account</MenuItem>
-              <MenuItem onClick={handleClose}>Logout</MenuItem>
+              <div class="link-wrapper">
+                <Link href="/dashboard">
+                  <MenuItem onClick={handleClose}>Dashboard</MenuItem>
+                </Link>
+                <Link href="/account">
+                  <MenuItem onClick={handleClose}>My account</MenuItem>
+                </Link>
+              </div>
+              <MenuItem onClick={() => signOut()}>Logout</MenuItem>
             </MenuList>
           </ClickAwayListener>
         </Paper>

@@ -13,16 +13,9 @@ export default function dashboard({ exoplanets }) {
   }
   return (
     <div class="main">
-      <Header title="Dashboard" />
+      <Header title="Account" />
       <Box sx={{ flexGrow: 1 }} className="grid-mt">
-      <Grid container spacing={2}>
-        {exoplanets.map((exoplanet) => (
-          <Grid item xs={4} key={exoplanet.id}>
-            <MediaCard exoplanet={exoplanet} page="/exo-details" onClick={() => handleCardClick(exoplanet.PLANET)}  />
-          </Grid>
-        ))}
-      </Grid>
-    </Box>
+      </Box>
     </div>
   );
 }
