@@ -8,6 +8,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Signin from '../modules/signin';
 import PopperCard from '../modules/popmenu';
 import Image from 'next/image';
+import Link from 'next/link';
 
 
 export default function Header({ title }) {
@@ -70,20 +71,28 @@ export default function Header({ title }) {
             />
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 0 }}>
+          <Typography className='fb-15 mw-200' variant="h6" component="div" sx={{ flexGrow: 0 }}>
             {title}
           </Typography>
           <div style={{ display: "flex", flexGrow: 1 }}>
-            <Image
-              src="https://drive.google.com/uc?id=1GgVBerg9ol99O1dsjNIeQZTK3YM6No9c" // Route of the image file
-              height={45} // Desired size with correct aspect ratio
-              width={255} // Desired size with correct aspect ratio
-              alt="Planet Trader Logo"
-              quality={100}
-              style={{objectFit: "none", borderRadius: "30px", margin: "auto auto auto 35%"}}
-            />
+          <Link 
+              href={"/dashboard"}
+              style={{margin: "auto auto auto auto"}}
+            >
+              <Image
+                src="https://drive.google.com/uc?id=1GgVBerg9ol99O1dsjNIeQZTK3YM6No9c" // Route of the image file
+                height={45} // Desired size with correct aspect ratio
+                width={255} // Desired size with correct aspect ratio
+                alt="Planet Trader Logo"
+                quality={100}
+                style={{objectFit: "none", borderRadius: "30px"}}
+              />
+            </Link>
           </div>
-          <Signin />
+
+          <Signin
+            className="fb-20"
+          />
         </Toolbar>
       </AppBar>
     </Box>

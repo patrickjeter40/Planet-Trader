@@ -3,11 +3,9 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import Signin from '../modules/signin';
-import PopperCard from '../modules/popmenu';
 import Image from 'next/image';
+import Link from 'next/link';
+import Container from '@mui/material/Container';
 
 
 export default function Footer({ title }) {
@@ -29,19 +27,31 @@ export default function Footer({ title }) {
     style={{margin: "10% 0 0 0",}}
     >
       <AppBar position="static">
+        <Container fixed={true} className='d-flex justify-between align-i-center text-dec-no pt-20'>  
+          © 2022-2023 Digital Arcadia
+          <Link href={"/terms"}>
+              Terms & Conditions
+          </Link>
+        </Container>
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 0 }}>
             {title}
           </Typography>
           <div style={{ display: "flex", flexGrow: 1 }}>
-            <Image
-              src="https://drive.google.com/uc?id=1GgVBerg9ol99O1dsjNIeQZTK3YM6No9c" // Route of the image file
-              height={45} // Desired size with correct aspect ratio
-              width={255} // Desired size with correct aspect ratio
-              alt="Planet Trader Logo"
-              quality={100}
-              style={{objectFit: "none", borderRadius: "30px", margin: "auto auto auto auto"}}
-            />
+            <Link 
+              href={"/dashboard"}
+              style={{margin: "auto auto auto auto"}}
+            >
+              <Image
+                src="https://drive.google.com/uc?id=1GgVBerg9ol99O1dsjNIeQZTK3YM6No9c" // Route of the image file
+                height={45} // Desired size with correct aspect ratio
+                width={255} // Desired size with correct aspect ratio
+                alt="Planet Trader Logo"
+                quality={100}
+                style={{objectFit: "none", borderRadius: "30px"}}
+                
+              />
+            </Link>
           </div>
         </Toolbar>
       </AppBar>

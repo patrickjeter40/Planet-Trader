@@ -18,6 +18,7 @@ export default function PopperCard(props) {
     anchorEl={anchorRef.current}
     role={undefined}
     placement="bottom-start"
+    style={{zIndex: "1"}}
     transition
     disablePortal
     >

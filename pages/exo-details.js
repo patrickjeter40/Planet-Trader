@@ -1,4 +1,4 @@
-import Header from '../components/Header';
+import Header from '../components/header';
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
@@ -41,4 +41,3 @@ export async function getServerSideProps() {
     };
   }
 }
-

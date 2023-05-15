@@ -2,44 +2,25 @@ import Header from '../components/header';
 import Footer from '../components/footer';
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import MediaCard from '../components/media-card';
-import SimpleSlider from '../components/welcome-hero';
 import { useState } from 'react';
-import { Typography } from '@mui/material';
-import { useRouter } from 'next/router';
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
 
 
 export default function dashboard({ exoplanets }) {
-  
-  
-
   if (!exoplanets) {
     return <p>Unable to fetch data... Please contact support@exoplanets</p>;
   }
-
-  
-
   return (
     <div class="main">
       <Header title="Dashboard" />
-      <Box sx={{ flexGrow: 1 }} className="grid-mt">
-        <SimpleSlider />
-        <Typography variant='h5'>
-            <b>Trending Planets</b>
-        </Typography>
-        <Grid container spacing={2}>
-          {exoplanets.map((exoplanet) => (
-            <Grid item xs={4} key={exoplanet.id}>
-              <MediaCard 
-                exoplanet={exoplanet} 
-                page="/exo-details" 
-                onClick={() => handleCardClick(exoplanet.PLANET)} 
-              />
-            </Grid>
-          ))}
-        </Grid>
-      </Box>
+      <Container maxWidth="sm">
+        <Box sx={{ flexGrow: 1 }} className="grid-mt">
+          <Typography>
+           
+            </Typography>
+        </Box>
+      </Container>
       <Footer />      
     </div>
   );
