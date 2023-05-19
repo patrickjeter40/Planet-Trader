@@ -6,6 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Link from 'next/link';
+import IconStat from './icon-stat';
 
 
 export default function MediaCard({ exoplanet, page }) {
@@ -23,7 +24,14 @@ export default function MediaCard({ exoplanet, page }) {
       </Link>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          {exoplanet.PLANET}
+          <IconStat
+            exoplanet={exoplanet}
+            id='planet'
+            svgurl='http://www.w3.org/2000/svg' 
+            alt='planet-icon'
+            statpull='ERADIUS' //document property name (exoplanets.ERADIUS)
+            statcontent='x' //string content to follow data
+          />
         </Typography>
         <Typography variant="body2" color="text.secondary">
           {exoplanet.Archetype}

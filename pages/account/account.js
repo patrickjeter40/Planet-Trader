@@ -1,29 +1,29 @@
+import Header from '../../components/layout/header';
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import MediaCard from './media-card';
+import MediaCard from '../components/media-card';
+import { useState } from 'react';
 
-export default function BasicGrid({ exoplanets }) {
+
+
+export default function dashboard({ exoplanets }) {
   if (!exoplanets) {
-    return <p>Loading...</p>;
+    return <p>Unable to fetch data... Please contact support@exoplanets</p>;
   }
   return (
-    <Box sx={{ flexGrow: 1 }} className="grid-mt">
-      <Grid container spacing={2}>
-        {exoplanets.map((exoplanet) => (
-          <Grid item xs={4} key={exoplanet.id}>
-            <MediaCard children={exoplanet} />      
-          </Grid>
-        ))}
-      </Grid>
-    </Box>
+    <div class="main">
+      <Header title="Account" />
+      <Box sx={{ flexGrow: 1 }} className="grid-mt">
+      </Box>
+    </div>
   );
 }
 
 export async function getServerSideProps() {
   try {
     // Fetch the data from the endpoint using fetch
-    const res = await fetch('http://localhost:3000/api/getplanets');
+    const res = await fetch('http://localhost:3000/api/getplanets-home');
     const exoplanets = await res.json();
 
     // Return the data as props

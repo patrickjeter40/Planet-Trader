@@ -5,8 +5,8 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import Signin from '../modules/signin';
-import PopperCard from '../modules/popmenu';
+import Signin from '../../modules/signin';
+import PopperCard from '../../modules/popmenu';
 import Image from 'next/image';
 import Link from 'next/link';
 

@@ -1,18 +1,16 @@
-import Header from '../components/header';
-import Footer from '../components/footer';
+import Header from '../components/layout/header';
+import Footer from '../components/layout/footer';
 import React, { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import SimpleSlider from '../components/welcome-hero';
+import SimpleSlider from '../components/common/simple-slider';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Link from 'next/link';
-import IconStat from '../components/icon-stat';
-
+import IconStat from '../components/common/icon-stat';
+import CardBookmark from '../components/common/card-bookmark';
 
 export default function dashboard({ exoplanets }) {
   
@@ -45,22 +43,17 @@ export default function dashboard({ exoplanets }) {
                     <IconStat
                       exoplanet={exoplanet}
                       id='planet'
-                      svgurl='http://www.w3.org/2000/svg'
+                      svgurl='http://www.w3.org/2000/svg' 
                       alt='planet-icon'
-                      statpull='ERADIUS'
-                      statcontent='x' 
+                      statpull='ERADIUS' //document property name (exoplanets.ERADIUS)
+                      statcontent='x' //string content to follow data
                     />
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
                     {exoplanet.Archetype}
                   </Typography>
                 </CardContent>
-                <CardActions>
-                  <Button size="small">Save</Button>
-                  <Button size="small" href={`/details?id=${exoplanet._id}`} onClick={() => setSelectedExoplanetId(exoplanet._id)}>
-                    Learn More
-                  </Button>
-                </CardActions>
+                <CardBookmark exoplanet={exoplanet} />
               </Card>
             </Grid>
           ))}

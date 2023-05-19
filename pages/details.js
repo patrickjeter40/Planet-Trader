@@ -1,9 +1,9 @@
-import Header from '../components/header';
+import Header from '../components/layout/header';
 import React, { useEffect, useState } from 'react';
 
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import MediaCard from '../components/media-card';
+import MediaCard from '../components/common/media-card';
 import clientPromise from "../lib/mongodb";
 import { ObjectId } from 'mongodb';
 
