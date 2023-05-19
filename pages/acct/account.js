@@ -2,7 +2,7 @@ import Header from '../../components/layout/header';
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import MediaCard from '../components/media-card';
+
 import { useState } from 'react';
 
 

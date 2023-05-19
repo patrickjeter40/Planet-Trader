@@ -1,16 +1,16 @@
-import Header from '../components/layout/header';
-import Footer from '../components/layout/footer';
+import Header from '../../components/layout/header';
+import Footer from '../../components/layout/footer';
 import React, { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import SimpleSlider from '../components/common/simple-slider';
+import SimpleSlider from '../../components/common/simple-slider';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Link from 'next/link';
-import IconStat from '../components/common/icon-stat';
-import CardBookmark from '../components/common/card-bookmark';
+import IconStat from '../../components/common/icon-stat';
+import CardBookmark from '../../components/common/card-bookmark';
 
 export default function dashboard({ exoplanets }) {
   
@@ -32,7 +32,7 @@ export default function dashboard({ exoplanets }) {
           {exoplanets.map((exoplanet) => (
             <Grid item xs={4} key={exoplanet.id}>
               <Card sx={{ maxWidth: 500 }}>
-              <Link href={`/details?id=${exoplanet._id}`} onClick={() => setSelectedExoplanetId(exoplanet._id)}>
+              <Link href={`/pt/details?id=${exoplanet._id}`} onClick={() => setSelectedExoplanetId(exoplanet._id)}>
                 <CardMedia sx={{ height: 140 }} 
                     image="https://drive.google.com/uc?id=1UTmqzmlYJYMFoa4F-QAWPFFiAhdqe1dN" 
                     title="" 

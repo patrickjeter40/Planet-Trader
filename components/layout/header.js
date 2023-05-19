@@ -76,7 +76,7 @@ export default function Header({ title }) {
           </Typography>
           <div style={{ display: "flex", flexGrow: 1 }}>
           <Link 
-              href={"/dashboard"}
+              href={"/pt/dashboard"}
               style={{margin: "auto auto auto auto"}}
             >
               <Image

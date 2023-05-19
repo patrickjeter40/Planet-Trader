@@ -1,10 +1,10 @@
-import Header from '../components/layout/header';
+import Header from '../../components/layout/header';
 import React, { useEffect, useState } from 'react';
 
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import MediaCard from '../components/common/media-card';
-import clientPromise from "../lib/mongodb";
+import MediaCard from '../../components/common/media-card';
+import clientPromise from "../../lib/mongodb";
 import { ObjectId } from 'mongodb';
 
 export default function details({ exoplanets }) {
@@ -17,7 +17,7 @@ export default function details({ exoplanets }) {
       <Box sx={{ flexGrow: 1 }} className="grid-mt">
       <Grid container spacing={2}>
         <Grid item xs={4}>
-          <MediaCard exoplanet={exoplanets} page="/dashboard" /> 
+          <MediaCard exoplanet={exoplanets} page="/pt/dashboard" /> 
         </Grid>
       </Grid>
     </Box>
