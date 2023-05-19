@@ -9,10 +9,12 @@ import Link from 'next/link';
 
 
 export default function MediaCard({ exoplanet, page }) {
+
+ 
   
   return (
     <Card sx={{ maxWidth: 500 }}>
-      <Link href={page}>
+      <Link href={page} onClick=''>
         <CardMedia sx={{ height: 140 }} 
           image="https://drive.google.com/uc?id=1UTmqzmlYJYMFoa4F-QAWPFFiAhdqe1dN" 
           title="" 
