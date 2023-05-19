@@ -6,7 +6,7 @@ export default async (req, res) => {
   try {
     // Connect to the MongoDB database using clientPromise
     const client = await clientPromise;
-    const db = client.db('ExoplanetRE');
+    const db = client.db('PlanetTrader');
     const collection = db.collection('exoplanets');
 
     // Fetch the first 20 records from the collection

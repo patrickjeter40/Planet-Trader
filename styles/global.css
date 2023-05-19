@@ -17,8 +17,16 @@ body {
     justify-content: space-between;
 }
 
+.justify-right{
+    justify-content: right;
+}
+
 .align-i-center {
     align-items: center;
+}
+
+.mr-auto{
+    margin-right: auto;
 }
 
 .text-dec-no a{

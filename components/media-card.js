@@ -30,7 +30,7 @@ export default function MediaCard({ exoplanet, page }) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Fav</Button>
+        <Button size="small">Save</Button>
         <Button size="small" href={page}>
           Learn More
         </Button>

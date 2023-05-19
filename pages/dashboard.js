@@ -3,9 +3,7 @@ import Footer from '../components/footer';
 import React, { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-
 import SimpleSlider from '../components/welcome-hero';
-
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -13,7 +11,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Link from 'next/link';
-
+import IconStat from '../components/icon-stat';
 
 
 export default function dashboard({ exoplanets }) {
@@ -37,23 +35,29 @@ export default function dashboard({ exoplanets }) {
             <Grid item xs={4} key={exoplanet.id}>
               <Card sx={{ maxWidth: 500 }}>
               <Link href={`/details?id=${exoplanet._id}`} onClick={() => setSelectedExoplanetId(exoplanet._id)}>
-
-                  <CardMedia sx={{ height: 140 }} 
+                <CardMedia sx={{ height: 140 }} 
                     image="https://drive.google.com/uc?id=1UTmqzmlYJYMFoa4F-QAWPFFiAhdqe1dN" 
                     title="" 
-                  />
-                </Link>
+                />
+              </Link>
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
-                    {exoplanet.PLANET}
+                    <IconStat
+                      exoplanet={exoplanet}
+                      id='planet'
+                      svgurl='http://www.w3.org/2000/svg'
+                      alt='planet-icon'
+                      statpull='ERADIUS'
+                      statcontent='x' 
+                    />
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
                     {exoplanet.Archetype}
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Button size="small">Fav</Button>
-                  <Button size="small" href='details'>
+                  <Button size="small">Save</Button>
+                  <Button size="small" href={`/details?id=${exoplanet._id}`} onClick={() => setSelectedExoplanetId(exoplanet._id)}>
                     Learn More
                   </Button>
                 </CardActions>

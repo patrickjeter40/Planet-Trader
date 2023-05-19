@@ -16,11 +16,9 @@ export default function details({ exoplanets }) {
       <Header title="Details" />
       <Box sx={{ flexGrow: 1 }} className="grid-mt">
       <Grid container spacing={2}>
-        
-          <Grid item xs={4}>
-            <MediaCard exoplanet={exoplanets} page="/dashboard" /> 
-          </Grid>
-       
+        <Grid item xs={4}>
+          <MediaCard exoplanet={exoplanets} page="/dashboard" /> 
+        </Grid>
       </Grid>
     </Box>
     </div>
@@ -30,7 +28,7 @@ export default function details({ exoplanets }) {
 export async function getServerSideProps(context) {
   try {
     const client = await clientPromise;
-    const db = client.db('ExoplanetRE');
+    const db = client.db('PlanetTrader');
     
     const { id } = context.query;
     const exoplanets = await db.collection("exoplanets").findOne({ _id: ObjectId(id) });
