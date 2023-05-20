@@ -6,19 +6,12 @@ import Popper from '@mui/material/Popper';
 import MenuItem from '@mui/material/MenuItem';
 import MenuList from '@mui/material/MenuList';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { useSession, signIn, signOut } from "next-auth/react"
 
 export default function PopperCard(props) {
   const { open, handleClose, handleListKeyDown, anchorRef } = props;
   const { data: session } = useSession();
-  const router = useRouter();
 
-  const handleLogout = async () => {
-    await signOut();
-    router.push('/pt/dashboard');
-    
-  };
 
   return (
     <Popper
@@ -54,7 +47,7 @@ export default function PopperCard(props) {
                   <MenuItem onClick={handleClose}>My account</MenuItem>
                 </Link>
               </div>
-              <MenuItem href='/pt/dashboard' onClick={() => handleLogout()}>Logout</MenuItem>
+              <MenuItem href='/pt/dashboard' onClick={() => signOut({ callbackUrl: 'http://localhost:3000/pt/dashboard' })}>Logout</MenuItem>
             </MenuList>
           </ClickAwayListener>
         </Paper>

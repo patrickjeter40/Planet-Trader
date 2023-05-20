@@ -7,11 +7,13 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Signin from '../../modules/signin';
 import PopperCard from '../../modules/popmenu';
-import Image from 'next/image';
 import Link from 'next/link';
-
+import { useSession } from "next-auth/react";
+import AvatarPic from "../common/avatar"
+import Image from 'next/image';
 
 export default function Header({ title }) {
+  
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
 
@@ -35,7 +37,7 @@ export default function Header({ title }) {
       setOpen(false);
     }
   }
-
+  const { data: session } = useSession()
   // return focus to the button when we transitioned from !open -> open
   const prevOpen = React.useRef(open);
   React.useEffect(() => {
@@ -50,6 +52,7 @@ export default function Header({ title }) {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
+          
           <IconButton
             size="large"
             edge="start"
@@ -63,6 +66,7 @@ export default function Header({ title }) {
             aria-haspopup="true"
             onClick={handleToggle}
           >
+            <AvatarPic />
             <PopperCard
               open={open}
               handleClose={handleClose}

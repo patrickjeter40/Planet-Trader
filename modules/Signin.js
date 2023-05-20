@@ -7,7 +7,7 @@ export default function Signin() {
     return (
       <>
         {/* Signed in as {session.user.email} <br /> */}
-        <Button className="white-btn" onClick={() => signOut()}>Sign out</Button>
+        <Button className="white-btn" onClick={() => signOut({ callbackUrl: 'http://localhost:3000/pt/dashboard' })}>Sign out</Button>
       </>
     )
   }

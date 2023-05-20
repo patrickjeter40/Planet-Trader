@@ -1,24 +1,27 @@
 import Header from '../../components/layout/header';
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-
-import { useState } from 'react';
+import { useSession } from "next-auth/react"
 
 
 
 export default function dashboard({ exoplanets }) {
-  if (!exoplanets) {
-    return <p>Unable to fetch data... Please contact support@exoplanets</p>;
+  const { data: session, status, update } = useSession()
+  if (status === "authenticated") {
+    return (
+      <div className="main">
+        <Header title="Account" />
+        <Box sx={{ flexGrow: 1 }} className="grid-mt">
+          <p>Signed in as {session.user.name}</p>
+          <p>Signed in as {session.user.email}</p>
+          <img src={session.user.image}></img>
+        </Box>
+        
+      </div>
+    );
   }
-  return (
-    <div class="main">
-      <Header title="Account" />
-      <Box sx={{ flexGrow: 1 }} className="grid-mt">
-      </Box>
-    </div>
-  );
 }
+
 
 export async function getServerSideProps() {
   try {

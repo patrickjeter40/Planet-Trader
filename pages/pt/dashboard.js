@@ -24,7 +24,7 @@ export default function dashboard({ exoplanets }) {
     <div class="main">
       <Header title="Dashboard" />
       <Box sx={{ flexGrow: 1 }} className="grid-mt">
-        <SimpleSlider />
+        
         <Typography variant='h5'>
             <b>Trending Planets</b>
         </Typography>
@@ -58,6 +58,7 @@ export default function dashboard({ exoplanets }) {
             </Grid>
           ))}
         </Grid>
+        <SimpleSlider />
       </Box>
       <Footer />      
     </div>
