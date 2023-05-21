@@ -29,7 +29,7 @@ export default function Footer({ title }) {
       <AppBar position="static">
         <Container fixed={true} className='d-flex justify-between align-i-center text-dec-no pt-20'>  
           © 2022-2023 Digital Arcadia
-          <Link href={"/terms"}>
+          <Link href={"/acct/terms"}>
               Terms & Conditions
           </Link>
         </Container>

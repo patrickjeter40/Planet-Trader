@@ -2,23 +2,50 @@ import Header from '../../components/layout/header';
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import { useSession } from "next-auth/react"
+import Paper from '@mui/material/Paper';
+import Stack from '@mui/material/Stack';
+import { styled } from '@mui/material/styles';
+import LabelValSpaced from '../../components/common/label-value-spaced';
 
 
+export default function account({ exoplanets }) {
 
-export default function dashboard({ exoplanets }) {
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  }));
   const { data: session, status, update } = useSession()
+
   if (status === "authenticated") {
     return (
       <div className="main">
         <Header title="Account" />
         <Box sx={{ flexGrow: 1 }} className="grid-mt">
-          <p>Signed in as {session.user.name}</p>
-          <p>Signed in as {session.user.email}</p>
-          <img src={session.user.image}></img>
+          <Box sx={{ width: '30%', marginLeft: 'auto', marginRight: 'auto' }}>
+            <Stack spacing={2}>
+              <Item>
+                <LabelValSpaced 
+                label='Name:'
+                value={session.user.name}
+                />
+              </Item>
+              <Item>
+               <LabelValSpaced 
+                  label='Email:'
+                  value={session.user.email}
+               />
+              </Item>
+            </Stack>
+          </Box>
         </Box>
         
       </div>
     );
+  } else {
+    return <div>Loading...</div>; 
   }
 }
 

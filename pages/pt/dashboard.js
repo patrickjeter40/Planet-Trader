@@ -20,6 +20,7 @@ export default function dashboard({ exoplanets }) {
   }
 
   const [selectedExoplanetId, setSelectedExoplanetId] = useState(null);
+  
   return (
     <div class="main">
       <Header title="Dashboard" />

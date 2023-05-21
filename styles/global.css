@@ -80,3 +80,7 @@ body {
 .pt-20{
     padding-top: 20px;
 }
+
+.MuiCardActions-spacing{
+    justify-content: space-around;
+}

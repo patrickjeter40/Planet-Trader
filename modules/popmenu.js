@@ -39,15 +39,30 @@ export default function PopperCard(props) {
             aria-labelledby="composition-button"
             onKeyDown={handleListKeyDown}
             >
+            {session && (
               <div class="link-wrapper">
                 <Link href="/pt/dashboard">
-                  <MenuItem onClick={handleClose}>Dashboard</MenuItem>
+                  <MenuItem onClick={handleClose}>My Planets</MenuItem>
                 </Link>
                 <Link href="/acct/account">
-                  <MenuItem onClick={handleClose}>My account</MenuItem>
+                  <MenuItem onClick={handleClose}>Account</MenuItem>
                 </Link>
               </div>
-              <MenuItem href='/pt/dashboard' onClick={() => signOut({ callbackUrl: 'http://localhost:3000/pt/dashboard' })}>Logout</MenuItem>
+            )}
+            {session && (
+              <MenuItem 
+                href='/pt/dashboard' 
+                onClick={() => signOut({ callbackUrl: 'http://localhost:3000/pt/dashboard' })}
+                >Logout
+              </MenuItem>
+            )}
+            {!session && (
+              <MenuItem 
+                href='/pt/dashboard' 
+                onClick={() => signIn()}
+                >Login
+            </MenuItem>      
+            )}    
             </MenuList>
           </ClickAwayListener>
         </Paper>

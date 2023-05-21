@@ -1,10 +1,7 @@
-import Header from '../components/header';
-import Footer from '../components/footer';
+import Header from '../../components/layout/header';
+import Footer from '../../components/layout/footer';
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import MediaCard from '../components/media-card';
-import { useState } from 'react';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 
