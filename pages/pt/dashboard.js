@@ -11,6 +11,7 @@ import Typography from '@mui/material/Typography';
 import Link from 'next/link';
 import IconStat from '../../components/common/icon-stat';
 import CardBookmark from '../../components/common/card-bookmark';
+import { useSession } from "next-auth/react"
 
 export default function dashboard({ exoplanets }) {
   
@@ -20,7 +21,9 @@ export default function dashboard({ exoplanets }) {
   }
 
   const [selectedExoplanetId, setSelectedExoplanetId] = useState(null);
+  const { data: session } = useSession();
   
+
   return (
     <div class="main">
       <Header title="Dashboard" />
