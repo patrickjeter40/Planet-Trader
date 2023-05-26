@@ -38,7 +38,7 @@ export default function dashboard({ exoplanets }) {
             - Harass, threaten, or harm other users or individuals.
             - Upload, post, or transmit any content that is illegal, obscene, defamatory, or violates the rights of others.
             - Attempt to gain unauthorized access to the Service or interfere with its proper functioning.
-            - Use the Service in any way that could damage, disable, or impair its infrastructure or the experience of other users.
+            - Use Service in any way that could damage, disable, or impair its infrastructure or the experience of other users.
             <br></br>
             <br></br>
             4. Intellectual Property Rights
