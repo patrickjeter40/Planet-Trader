@@ -11,22 +11,42 @@ export default function CardBookmark({ exoplanet }) {
 
   const handleSaveClick = async () => {
     if (session) {
-      setIsSaveClicked(true);
+      
       try {
-        const response = await axios.post('/api/save-exoplanet', {
+        const response = await axios.post('/api/checkIfBookmarked', {
           exoplanetId: exoplanet._id,
+          userEmail: session.user.email,
         });
+  
+        if (response.data === false) {
+          // Send the exoplanet id and user email to the applyBookmark endpoint
+          await axios.post('/api/applyBookmark', {
+            exoplanetId: exoplanet._id,
+            userEmail: session.user.email,
+          });
+          console.log('Bookmark applied successfully!');
+          setIsSaveClicked(true);
+        } else {
+          await axios.post('/api/removeBookmark', {
+            exoplanetId: exoplanet._id,
+            userEmail: session.user.email,
+          });
+          console.log('Bookmark removed successfully!');
+          setIsSaveClicked(false);
+        }
+  
         console.log(response.data); // optional: handle response
       } catch (error) {
         console.error(error);
       }
     }
   };
+  
 
   return (
     <CardActions>
       {session && (
-        <Button size="small" onClick={handleSaveClick} disabled={isSaveClicked}>
+        <Button size="small" onClick={handleSaveClick}>
           {isSaveClicked ? "Saved" : "Save"}
         </Button>
       )}
