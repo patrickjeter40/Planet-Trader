@@ -8,10 +8,28 @@ export default function CardBookmark({ exoplanet }) {
   const [isSaveClicked, setIsSaveClicked] = useState(false);
   const [selectedExoplanetId, setSelectedExoplanetId] = useState(null);
   const { data: session } = useSession();
+  useEffect(() => {
+    const fetchData = async () => {
+      if (session) {
+        try {
+          const response = await axios.post('/api/checkIfBookmarked', {
+            exoplanetId: exoplanet._id,
+            userEmail: session.user.email,
+          });
 
+          const isBookmarked = response.data;
+          setIsSaveClicked(isBookmarked);
+          console.log('Bookmark status:', isBookmarked);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+    };
+
+    fetchData();
+  }, [exoplanet._id, session]);
   const handleSaveClick = async () => {
-    if (session) {
-      
+    if (session) {  
       try {
         const response = await axios.post('/api/checkIfBookmarked', {
           exoplanetId: exoplanet._id,
