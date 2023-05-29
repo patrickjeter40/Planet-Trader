@@ -35,7 +35,7 @@ export const authOptions = {
             profilePicture: user.image,
             phoneNumber: "",
             planetFav: [],
-            planetOwned: "",
+            planetOwned: [],
             credits: 0
           };
 
