@@ -2,7 +2,7 @@ import clientPromise from '../../lib/mongodb';
 
 export default async (req, res) => {
   try {
-    const { exoplanetId, userEmail } = req.body;
+    const { userEmail, exoplanetName } = req.body;
 
     // Connect to the MongoDB database using clientPromise
     const client = await clientPromise;
@@ -12,7 +12,7 @@ export default async (req, res) => {
     // Find the user document matching the email and exoplanetId criteria
     let user = await collection.findOne({
       email: userEmail,
-      planetFav: exoplanetId,
+      planetFav: exoplanetName,
     });
 
     if (!user) {

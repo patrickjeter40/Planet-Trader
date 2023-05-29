@@ -13,8 +13,8 @@ export default function CardBookmark({ exoplanet }) {
       if (session) {
         try {
           const response = await axios.post('/api/checkIfBookmarked', {
-            exoplanetId: exoplanet._id,
             userEmail: session.user.email,
+            exoplanetName: exoplanet.PLANET,
           });
 
           const isBookmarked = response.data;
@@ -32,22 +32,22 @@ export default function CardBookmark({ exoplanet }) {
     if (session) {  
       try {
         const response = await axios.post('/api/checkIfBookmarked', {
-          exoplanetId: exoplanet._id,
           userEmail: session.user.email,
+          exoplanetName: exoplanet.PLANET,
         });
   
         if (response.data === false) {
           // Send the exoplanet id and user email to the applyBookmark endpoint
           await axios.post('/api/applyBookmark', {
-            exoplanetId: exoplanet._id,
             userEmail: session.user.email,
+            exoplanetName: exoplanet.PLANET,
           });
           console.log('Bookmark applied successfully!');
           setIsSaveClicked(true);
         } else {
           await axios.post('/api/removeBookmark', {
-            exoplanetId: exoplanet._id,
             userEmail: session.user.email,
+            exoplanetName: exoplanet.PLANET,
           });
           console.log('Bookmark removed successfully!');
           setIsSaveClicked(false);

@@ -41,7 +41,7 @@ export default function PopperCard(props) {
             >
             {session && (
               <div class="link-wrapper">
-                <Link href="/pt/dashboard">
+                <Link href="/pt/myPlanets">
                   <MenuItem onClick={handleClose}>My Planets</MenuItem>
                 </Link>
                 <Link href="/acct/account">

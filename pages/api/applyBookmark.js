@@ -2,7 +2,7 @@ import clientPromise from '../../lib/mongodb';
 
 export default async (req, res) => {
   try {
-    const { exoplanetId, userEmail } = req.body;
+    const { userEmail, exoplanetName } = req.body;
 
     // Connect to the MongoDB database using clientPromise
     const client = await clientPromise;
@@ -12,7 +12,7 @@ export default async (req, res) => {
     // Find the user document matching the email and update the planetFav property
     const result = await collection.updateOne(
       { email: userEmail },
-      { $set: { planetFav: exoplanetId } }
+      { $push: { planetFav: exoplanetName } } // Use $push to add exoplanetId to the planetFav array
     );
 
     // Check if the update was successful
