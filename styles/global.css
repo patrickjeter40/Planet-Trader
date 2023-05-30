@@ -77,12 +77,16 @@ body {
     flex-basis: 20%;
 }
 
+.m-0 {
+    margin: 0px;
+}
+
 .mw-200 {
     max-width: 200px;
 }
 
-.mw-50-p {
-    max-width: 50%;
+.mw-85{
+    max-width: 85%;
 }
 
 .pt-20{

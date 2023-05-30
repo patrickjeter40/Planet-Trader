@@ -6,6 +6,7 @@ import Grid from '@mui/material/Grid';
 import SelectDrop from '../common/selectDrop';
 import Button from '@mui/material/Button';
 import { TextField } from '@mui/material';
+import DiscreteSliderMarks from '../common/DiscreteSliderMarks';
 
 export default function SearchBar({ textSV }) {
   const router = useRouter();
@@ -34,7 +35,9 @@ export default function SearchBar({ textSV }) {
     <Box sx={{ flexGrow: 1 }}>
       <h2>Search for an Exoplanet</h2>
       
-        <div className='d-flex align-i-center justify-between mw-50-p'>
+        <div className='d-flex align-i-center justify-between mw-85'>
+          <SelectDrop />
+          <DiscreteSliderMarks />
           <TextField
             id="outlined-basic"
             label="Planet Name"
@@ -43,7 +46,6 @@ export default function SearchBar({ textSV }) {
             onChange={handleChange}
             onKeyPress={handleKeyPress}
           />
-          <SelectDrop />
           <Button variant="contained" id="search-button" onClick={handleSearchClick}>
             Search
           </Button>
