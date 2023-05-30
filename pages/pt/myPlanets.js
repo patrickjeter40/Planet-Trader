@@ -35,7 +35,7 @@ export default function Dashboard({ exoplanets }) {
                 </Link>
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
-                    <IconStat exoplanet={exoplanet} id="planet" svgurl="http://www.w3.org/2000/svg" alt="planet-icon" statpull="ERADIUS" statcontent="x" />
+                    <IconStat exoplanet={exoplanet} id="planet" svgurl="http://www.w3.org/2000/svg" alt="planet-icon" statpull="pl_rade" statcontent="x" />
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
                     {exoplanet.Archetype}

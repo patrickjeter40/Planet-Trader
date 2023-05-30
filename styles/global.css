@@ -17,6 +17,10 @@ body {
     justify-content: space-between;
 }
 
+.justify-center{
+    justify-content: center;
+}
+
 .justify-right{
     justify-content: right;
 }
@@ -75,6 +79,10 @@ body {
 
 .mw-200 {
     max-width: 200px;
+}
+
+.mw-50-p {
+    max-width: 50%;
 }
 
 .pt-20{

@@ -8,7 +8,7 @@ export default function IconStat({ exoplanet, id, svgurl, alt, statpull, statcon
   return (
       <div class="d-flex justify-right">
         <div class="mr-auto">
-          {exoplanet.PLANET}
+          {exoplanet.pl_name}
         </div>
         <svg xmlns={svgurl} alt={alt} viewBox="0 0 100 100" id={id}  style={{maxWidth: "7%", marginRight:"2%"}}>
           <path d={planetPathData} />

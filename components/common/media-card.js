@@ -29,7 +29,7 @@ export default function MediaCard({ exoplanet, page }) {
             id='planet'
             svgurl='http://www.w3.org/2000/svg' 
             alt='planet-icon'
-            statpull='ERADIUS' //document property name (exoplanets.ERADIUS)
+            statpull='pl_rade' //document property name (exoplanets.pl_rade)
             statcontent='x' //string content to follow data
           />
         </Typography>

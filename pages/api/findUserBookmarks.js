@@ -21,7 +21,7 @@ export default async (req, res) => {
     const planetFav = user.planetFav;
 
     // Find the exoplanets documents where PLANET property matches a value in planetFav
-    const exoplanets = await exoplanetsCollection.find({ PLANET: { $in: planetFav } }).toArray();
+    const exoplanets = await exoplanetsCollection.find({ pl_name: { $in: planetFav } }).toArray();
 
     res.status(200).json(exoplanets);
   } catch (error) {
