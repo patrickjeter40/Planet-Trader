@@ -34,7 +34,7 @@ function valuetext(value) {
 export default function DiscreteSliderMarks() {
   return (
     <Box sx={{ width: 300 }}>
-      <h4 className='m-0'>Lightyears from Earth:</h4>
+      <h4 className='m-0 mb-10'>Lightyears from Earth:</h4>
       <Slider
         aria-label="Custom marks"
         defaultValue={20}

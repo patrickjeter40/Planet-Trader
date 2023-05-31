@@ -1,16 +1,15 @@
 import * as React from 'react';
 import { useRouter } from 'next/router';
-import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-import SelectDrop from '../common/selectDrop';
 import Button from '@mui/material/Button';
 import { TextField } from '@mui/material';
 import DiscreteSliderMarks from '../common/DiscreteSliderMarks';
 
-export default function SearchBar({ textSV }) {
+export default function SearchBar({ textSV, orbitMaxSV, orbitMinSV }) {
   const router = useRouter();
-  const [searchValue, setSearchValue] = React.useState(textSV || '');
+  const [searchNameValue, setNameValue] = React.useState(textSV || '');
+  const [searchOrbitMinValue, setOrbitMinValue] = React.useState(orbitMinSV || '');
+  const [searchOrbitMaxValue, setOrbitMaxValue] = React.useState(orbitMaxSV || '');
 
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
@@ -24,28 +23,60 @@ export default function SearchBar({ textSV }) {
   };
 
   const search = () => {
-    router.push(`/pt/searchResults?query=${encodeURIComponent(searchValue)}`);
+    router.push(`/pt/searchResults?query=${encodeURIComponent(searchNameValue)}`);
   };
 
-  const handleChange = (event) => {
-    setSearchValue(event.target.value);
+  const handleNameChange = (event) => {
+    setNameValue(event.target.value);
+  };
+  const handleOrbMinChange = (event) => {
+    setOrbitMinValue(event.target.value);
+  };
+  const handleOrbMaxChange = (event) => {
+    setOrbitMaxValue(event.target.value);
   };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
       <h2>Search for an Exoplanet</h2>
       
-        <div className='d-flex align-i-center justify-between mw-85'>
-          <SelectDrop />
+      <div className='d-flex align-i-self-start justify-between'>
+          <div className='mw-200'>
+            <h4 className='m-0 mb-15'>Orbital Period in Days:</h4>
+            <div className='d-flex justify-between'>
+              <TextField
+                id="outlined-error-helper-text"
+                label="Min"
+                type= 'number'
+                name='orbit-min'
+                value={orbitMinSV}
+                onChange={handleOrbMinChange}
+                size='small'
+              />
+              <TextField
+                id="outlined-error-helper-text"
+                label="Max"
+                type= 'number'
+                name='orbit'
+                value={orbitMaxSV}
+                onChange={handleOrbMaxChange}
+                size='small'
+              />
+            </div>
+          </div>
           <DiscreteSliderMarks />
-          <TextField
-            id="outlined-basic"
-            label="Planet Name"
-            variant="outlined"
-            value={searchValue}
-            onChange={handleChange}
-            onKeyPress={handleKeyPress}
-          />
+          <div className='mw-200'>
+            <h4 className='m-0 mb-15'>Exoplanet Name</h4>
+            <TextField
+              id="outlined-basic"
+              label="Name"
+              variant="outlined"
+              value={searchNameValue}
+              onChange={handleNameChange}
+              onKeyPress={handleKeyPress}
+              size='small'
+            />
+          </div>
           <Button variant="contained" id="search-button" onClick={handleSearchClick}>
             Search
           </Button>

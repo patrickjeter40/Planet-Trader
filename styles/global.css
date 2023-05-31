@@ -28,6 +28,12 @@ body {
 .align-i-center {
     align-items: center;
 }
+.align-i-self-end{
+    align-items: self-end;    
+}
+.align-i-self-start{
+    align-items: self-start;    
+}
 
 .mr-auto{
     margin-right: auto;
@@ -81,6 +87,14 @@ body {
     margin: 0px;
 }
 
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.mb-15 {
+    margin-bottom: 15px;
+}
+
 .mw-200 {
     max-width: 200px;
 }
@@ -95,4 +109,8 @@ body {
 
 .MuiCardActions-spacing{
     justify-content: space-around;
+}
+
+.w-30-p{
+    width: 20%;
 }
