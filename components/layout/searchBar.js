@@ -23,8 +23,12 @@ export default function SearchBar({ textSV, orbitMaxSV, orbitMinSV }) {
   };
 
   const search = () => {
-    router.push(`/pt/searchResults?query=${encodeURIComponent(searchNameValue)}`);
+    const query = encodeURIComponent(searchNameValue);
+    const orbitMin = encodeURIComponent(searchOrbitMinValue);
+    const orbitMax = encodeURIComponent(searchOrbitMaxValue);
+    router.push(`/pt/searchResults?query=${query}&orbitMin=${orbitMin}&orbitMax=${orbitMax}`);
   };
+  
 
   const handleNameChange = (event) => {
     setNameValue(event.target.value);
@@ -49,8 +53,9 @@ export default function SearchBar({ textSV, orbitMaxSV, orbitMinSV }) {
                 label="Min"
                 type= 'number'
                 name='orbit-min'
-                value={orbitMinSV}
+                value={searchOrbitMinValue}
                 onChange={handleOrbMinChange}
+                onKeyPress={handleKeyPress}
                 size='small'
               />
               <TextField
@@ -58,8 +63,9 @@ export default function SearchBar({ textSV, orbitMaxSV, orbitMinSV }) {
                 label="Max"
                 type= 'number'
                 name='orbit'
-                value={orbitMaxSV}
+                value={searchOrbitMaxValue}
                 onChange={handleOrbMaxChange}
+                onKeyPress={handleKeyPress}
                 size='small'
               />
             </div>
