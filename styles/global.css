@@ -122,3 +122,15 @@ body {
 .fb-15 {
     flex-basis: 15%;
 }
+
+.self-end {
+    align-self: end;
+}
+
+.gap-20 {
+    gap: 20px;
+}
+
+.min-40 {
+    min-height: 40px;
+}

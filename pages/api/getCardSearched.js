@@ -12,7 +12,7 @@ export default async (req, res) => {
     // Find up to 20 documents that contain the searchValue in the documents property of 'PLANET'
     const exoplanets = await collection
       .find({ pl_name: { $regex: query, $options: 'i' } })
-      .limit(20)
+      .limit(15)
       .toArray();
 
     res.status(200).json(exoplanets);
