@@ -114,3 +114,11 @@ body {
 .w-30-p{
     width: 20%;
 }
+
+.self-center {
+    align-self: center;
+}
+
+.fb-15 {
+    flex-basis: 15%;
+}

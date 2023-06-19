@@ -1,6 +1,5 @@
 import Header from '../../components/layout/header';
 import Footer from '../../components/layout/footer';
-import SimpleSlider from '../../components/common/simple-slider';
 import SearchBar from '../../components/layout/searchBar';
 import CardGrid from '../../components/common/cardGrid';
 
@@ -12,12 +11,9 @@ export default function dashboard({ exoplanets }) {
     return <p>Unable to fetch data... Please contact support@exoplanets</p>;
   }
 
- 
-
   return (
     <div class="main">
       <Header title="Dashboard" />
-      <SimpleSlider />
       <SearchBar />
       <CardGrid exoplanets={exoplanets} />
       <Footer />      

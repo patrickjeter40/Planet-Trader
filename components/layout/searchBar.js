@@ -46,6 +46,18 @@ export default function SearchBar({ textSV, orbitMaxSV, orbitMinSV }) {
       
       <div className='d-flex align-i-self-start justify-between'>
           <div className='mw-200'>
+            <h4 className='m-0 mb-15'>Exoplanet Name</h4>
+            <TextField
+              id="outlined-basic"
+              label="Name"
+              variant="outlined"
+              value={searchNameValue}
+              onChange={handleNameChange}
+              onKeyPress={handleKeyPress}
+              size='small'
+            />
+          </div>
+          <div className='mw-200'>
             <h4 className='m-0 mb-15'>Orbital Period in Days:</h4>
             <div className='d-flex justify-between'>
               <TextField
@@ -71,19 +83,7 @@ export default function SearchBar({ textSV, orbitMaxSV, orbitMinSV }) {
             </div>
           </div>
           <DiscreteSliderMarks />
-          <div className='mw-200'>
-            <h4 className='m-0 mb-15'>Exoplanet Name</h4>
-            <TextField
-              id="outlined-basic"
-              label="Name"
-              variant="outlined"
-              value={searchNameValue}
-              onChange={handleNameChange}
-              onKeyPress={handleKeyPress}
-              size='small'
-            />
-          </div>
-          <Button variant="contained" id="search-button" onClick={handleSearchClick}>
+          <Button variant="contained" id="search-button" onClick={handleSearchClick} className='self-center fb-15'>
             Search
           </Button>
         </div>

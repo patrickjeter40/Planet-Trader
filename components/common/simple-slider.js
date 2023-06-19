@@ -24,7 +24,7 @@ export default function SimpleSlider() {
           src="https://drive.google.com/uc?id=1XA835vbCigj3z-LsTtREf1KGQKLaU8De" 
           height={200}
           width={1500}
-          alt="Black and white image of a planet"
+          alt="Vastness of space with stars "
           quality={100}
           style={{objectFit: "cover", borderRadius: "18px", width: "100%",}}
         />  
@@ -34,7 +34,7 @@ export default function SimpleSlider() {
           src="https://drive.google.com/uc?id=1XA835vbCigj3z-LsTtREf1KGQKLaU8De" 
           height={200}
           width={1500}
-          alt="Black and white image of a planet"
+          alt="Vastness of space with stars "
           quality={100}
           style={{objectFit: "cover", borderRadius: "18px", width: "100%",}}
         />  
@@ -44,7 +44,7 @@ export default function SimpleSlider() {
           src="https://drive.google.com/uc?id=1XA835vbCigj3z-LsTtREf1KGQKLaU8De" 
           height={200}
           width={1500}
-          alt="Black and white image of a planet"
+          alt="Vastness of space with stars "
           quality={100}
           style={{objectFit: "cover", borderRadius: "18px", width: "100%",}}
         />  
