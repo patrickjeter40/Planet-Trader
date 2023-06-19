@@ -1,0 +1,6 @@
+{
+  "builds": [
+    { "src": "package.json", "use": "@vercel/static-build", "config": { "maxLambdaSize": "15mb" } }
+  ],
+  "installCommand": "npm install --force"
+}
