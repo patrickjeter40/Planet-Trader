@@ -69,7 +69,7 @@ export default function PageWithJSbasedForm() {
             data-client_id="392887464032-0ule5ia2h0tbpmnpmamjf0tqdbhmcscc.apps.googleusercontent.com"
             data-context="signup"
             data-ux_mode="popup"
-            data-login_uri="http://localhost:3000/sign-up"
+            data-login_uri="https://planet-trader.vercel.app/sign-up"
             data-itp_support="true">
         </div>
 
