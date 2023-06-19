@@ -3,7 +3,10 @@
 body {
     margin: 0px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
 }
+
+
 
 .d-flex{
     display: flex;
@@ -81,6 +84,10 @@ body {
 
 .fb-20{
     flex-basis: 20%;
+}
+
+.fb-50{
+    flex-basis: 50%;
 }
 
 .m-0 {

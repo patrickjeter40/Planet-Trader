@@ -24,7 +24,7 @@ export default function Dashboard({ exoplanets }) {
       <Header title="Dashboard" />
       <Box sx={{ flexGrow: 1 }} className="grid-mt">
         <Typography variant="h5">
-          <b>My Planets</b>
+          <b>My Saved Planets</b>
         </Typography>
         <Grid container spacing={2}>
           {exoplanets.map((exoplanet) => (

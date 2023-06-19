@@ -1,12 +1,11 @@
 import Header from '../../components/layout/header';
 import React, { useEffect, useState } from 'react';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
 import MediaCard from '../../components/common/media-card';
 import clientPromise from "../../lib/mongodb";
 import { ObjectId } from 'mongodb';
 import { Button } from '@mui/material';
-import { Margin } from '@mui/icons-material';
+import Footer from '../../components/layout/footer';
+import PlanetDetailsCard from '../../components/common/planetDetailsCard';
 
 export default function details({ exoplanets }) {
   if (!exoplanets) {
@@ -16,27 +15,35 @@ export default function details({ exoplanets }) {
   const handleVisitClick = () => {
     const visitExo = exoplanets.pl_name.replace(/ /g, "_");
     const url = `https://exoplanets.nasa.gov/eyes-on-exoplanets/#/planet/${visitExo}`;
-    window.location.href = url;
-  }
+    window.open(url, "_blank");
+  };
 
   return (
     <div class="main">
       <Header title="Details" />
       <div style={{marginTop: "5%"}}>
-        <MediaCard 
-          exoplanet={exoplanets} 
-          page="/pt/dashboard" 
-        /> 
-      
+        <div class='d-flex justify-between'>
+          <MediaCard 
+            exoplanet={exoplanets} 
+            page="/pt/dashboard"
+            
+          /> 
+          <PlanetDetailsCard 
+            exoplanet={exoplanets} 
+          />
+        </div>
         <Button 
           variant="contained" 
           id="search-button" 
           className='' 
           style={{marginTop:"4%", minWidth:"20%"}}
           onClick={handleVisitClick}
+          fullWidth='true'
+          color='success'
           >
             Visit this Planet
         </Button>
+        <Footer />
       </div>
     </div>
   );

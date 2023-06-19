@@ -15,7 +15,7 @@ export default function dashboard({ exoplanets }) {
     <div class="main">
       <Header title="Dashboard" />
       <SearchBar />
-      <CardGrid exoplanets={exoplanets} />
+      <CardGrid exoplanets={exoplanets} gridCaption="Trending Planets" />
       <Footer />      
     </div>
   );

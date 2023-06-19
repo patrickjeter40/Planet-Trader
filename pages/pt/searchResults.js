@@ -5,7 +5,7 @@ import SearchBar from '../../components/layout/searchBar';
 import { useRouter } from 'next/router';
 import CardGrid from '../../components/common/cardGrid';
 
-export default function Dashboard({ exoplanets }) {
+export default function Dashboard({ exoplanets, gridCaption }) {
   const router = useRouter();
   const { query } = router.query; // Retrieve the query parameter from the URL
 
@@ -36,7 +36,7 @@ export default function Dashboard({ exoplanets }) {
     <div className="main">
       <Header title="Dashboard" />
       <SearchBar textSV={query} />
-      <CardGrid exoplanets={fetchedExoplanets} />
+      <CardGrid exoplanets={fetchedExoplanets} gridCaption="Results" />
       <Footer />
     </div>
   );

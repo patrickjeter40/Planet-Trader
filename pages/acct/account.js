@@ -6,7 +6,7 @@ import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
 import LabelValSpaced from '../../components/common/label-value-spaced';
-
+import Footer from '../../components/layout/footer';
 
 export default function account({ exoplanets }) {
 
@@ -41,7 +41,7 @@ export default function account({ exoplanets }) {
             </Stack>
           </Box>
         </Box>
-        
+        <Footer />
       </div>
     );
   } else {

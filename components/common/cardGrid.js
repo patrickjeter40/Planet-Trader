@@ -9,12 +9,12 @@ import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import React, { useEffect, useState } from 'react';
 
-export default function CardGrid({ exoplanets }) {
+export default function CardGrid({ exoplanets, gridCaption }) {
   const [selectedExoplanetId, setSelectedExoplanetId] = useState(null);
   return (
   <Box sx={{ flexGrow: 1 }} className="grid-mt">
         <Typography variant='h5'>
-            <b>Trending Planets</b>
+            <b>{gridCaption}</b>
         </Typography>
         <Grid container spacing={2}>
           {exoplanets.map((exoplanet) => (

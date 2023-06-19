@@ -22,17 +22,33 @@ export default function SearchBar({ textSV, orbitMaxSV, orbitMinSV }) {
     search();
   };
 
+
   const search = () => {
     const query = encodeURIComponent(searchNameValue);
     const orbitMin = encodeURIComponent(searchOrbitMinValue);
     const orbitMax = encodeURIComponent(searchOrbitMaxValue);
     router.push(`/pt/searchResults?query=${query}&orbitMin=${orbitMin}&orbitMax=${orbitMax}`);
   };
+
+  const handleRandomClick = async () => {
+    try {
+      const response = await fetch('/api/getCardRandom');
+      const data = await response.json();
+      
+      if (data && data.randomExoplanetId) {
+        router.push(`/pt/details?id=${data.randomExoplanetId}`);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
   
 
   const handleNameChange = (event) => {
     setNameValue(event.target.value);
   };
+
+  // These 2 functions aren't needed until min-max orbit is implemented for search
   const handleOrbMinChange = (event) => {
     setOrbitMinValue(event.target.value);
   };
@@ -57,9 +73,23 @@ export default function SearchBar({ textSV, orbitMaxSV, orbitMinSV }) {
               size='small'
             />
           </div>
-
-          <Button variant="contained" id="search-button" onClick={handleSearchClick} className='self-end fb-15 min-40'>
+          <Button 
+            variant="contained" 
+            id="search-button" 
+            onClick={handleSearchClick} 
+            className='self-end fb-15 min-40'
+            style={{marginBottom: "1px"}}
+          >
             Search
+          </Button>
+          <Button 
+            variant="outlined" 
+            id="random-button" 
+            onClick={handleRandomClick} 
+            className='self-end '
+            style={{marginBottom: "1px"}}
+          >
+            Random
           </Button>
         </div>
         
