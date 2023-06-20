@@ -52,7 +52,7 @@ export default function PopperCard(props) {
             {session && (
               <MenuItem 
                 href='/pt/dashboard' 
-                onClick={() => signOut({ callbackUrl: 'http://localhost:3000/pt/dashboard' })}
+                onClick={() => signOut({ callbackUrl: '/pt/dashboard' })}
                 >Logout
               </MenuItem>
             )}
