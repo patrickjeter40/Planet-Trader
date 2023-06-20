@@ -59,7 +59,7 @@ export async function getServerSideProps(context) {
     const userEmail = session.user.email;
 
     // Fetch the data from the endpoint using fetch with user email data
-    const res = await fetch(`https://planet-trader.vercel.app/api/findUserBookmarks?userEmail=${userEmail}`);
+    const res = await fetch(`http://localhost:3000/api/findUserBookmarks?userEmail=${userEmail}`);
     const exoplanets = await res.json();
 
     // Return the data as props

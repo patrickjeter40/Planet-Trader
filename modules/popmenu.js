@@ -52,7 +52,7 @@ export default function PopperCard(props) {
             {session && (
               <MenuItem 
                 href='/pt/dashboard' 
-                onClick={() => signOut({ callbackUrl: 'https://planet-trader.vercel.app/pt/dashboard' })}
+                onClick={() => signOut({ callbackUrl: 'http://localhost:3000/pt/dashboard' })}
                 >Logout
               </MenuItem>
             )}

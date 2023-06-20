@@ -20,7 +20,7 @@ export default function Dashboard({ exoplanets, gridCaption }) {
     if (query) {
       const fetchExoplanets = async () => {
         try {
-          const res = await fetch(`https://planet-trader.vercel.app/api/getCardSearched?query=${query}`);
+          const res = await fetch(`http://localhost:3000/api/getCardSearched?query=${query}`);
           const data = await res.json();
           console.log('Exoplanets:', data);
           setFetchedExoplanets(data);
@@ -48,7 +48,7 @@ export async function getServerSideProps(context) {
     const { searchValue } = query;
 
     // Fetch the data from the endpoint using fetch, passing the searchValue as a query parameter
-    const res = await fetch(`https://planet-trader.vercel.app/api/getCardSearched?query=${searchValue}`);
+    const res = await fetch(`http://localhost:3000/api/getCardSearched?query=${searchValue}`);
     const exoplanets = await res.json();
 
     // Return the data as props
