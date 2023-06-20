@@ -18,7 +18,7 @@ export default function PlanetDetailsCard( {exoplanet} ) {
 
   return (
     
-    <Box sx={{ width: '100%', flexBasis:'60%' }}>
+    <Box sx={{ width: '100%', flexBasis:'50%' }}>
       <Stack spacing={6}>
         <Item><strong>Orbit: </strong>This exoplanet has an orbital period of {Math.round(exoplanet.pl_orbper)} Earth days</Item>
         <Item><strong>Mass: </strong>It has a mass that is {Math.round(exoplanet.pl_bmasse)} times our Earth</Item>
