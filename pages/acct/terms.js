@@ -7,9 +7,7 @@ import Typography from '@mui/material/Typography';
 
 
 export default function dashboard({ exoplanets }) {
-  if (!exoplanets) {
-    return <p>Unable to fetch data... Please contact support@exoplanets</p>;
-  }
+  
   return (
     <div class="main">
       <Header title="Dashboard" />
