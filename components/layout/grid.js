@@ -23,7 +23,8 @@ export default function BasicGrid({ exoplanets }) {
 export async function getServerSideProps() {
   try {
     // Fetch the data from the endpoint using fetch
-    const res = await fetch('http://localhost:3000/api/getplanets');
+    const envUrl = process.env.VERCEL_URL;
+    const res = await fetch('https://planet-trader.vercel.app/api/getplanets');
     const exoplanets = await res.json();
 
     // Return the data as props

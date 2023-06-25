@@ -28,8 +28,10 @@ export default function Footer({ title }) {
     >
       <AppBar position="static">
         <Container fixed={true} className='d-flex justify-between align-i-center text-dec-no pt-20'>  
+        <div>
           © 2022-2023 Patrick Jeter
-          <Link href={"/acct/terms"}>
+        </div>
+          <Link href={"/acct/terms"} className='white'>
               Terms & Conditions
           </Link>
         </Container>

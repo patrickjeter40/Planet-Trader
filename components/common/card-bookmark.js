@@ -1,21 +1,25 @@
 import Button from '@mui/material/Button';
 import CardActions from '@mui/material/CardActions';
 import React, { useEffect, useState } from 'react';
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useSession, signIn, signOut } from 'next-auth/react';
 import axios from 'axios';
 
 export default function CardBookmark({ exoplanet }) {
   const [isSaveClicked, setIsSaveClicked] = useState(false);
   const [selectedExoplanetId, setSelectedExoplanetId] = useState(null);
   const { data: session } = useSession();
+
   useEffect(() => {
     const fetchData = async () => {
       if (session) {
         try {
-          const response = await axios.post('/api/checkIfBookmarked', {
-            userEmail: session.user.email,
-            exoplanetName: exoplanet.pl_name,
-          });
+          const response = await axios.post(
+            'https://planet-trader.vercel.app/api/checkIfBookmarked',
+            {
+              userEmail: session.user.email,
+              exoplanetName: exoplanet.pl_name,
+            }
+          );
 
           const isBookmarked = response.data;
           setIsSaveClicked(isBookmarked);
@@ -28,44 +32,40 @@ export default function CardBookmark({ exoplanet }) {
 
     fetchData();
   }, [exoplanet._id, session]);
+
   const handleSaveClick = async () => {
-    if (session) {  
+    if (session) {
       try {
-        const response = await axios.post('/api/checkIfBookmarked', {
-          userEmail: session.user.email,
-          exoplanetName: exoplanet.pl_name,
-        });
-  
-        if (response.data === false) {
-          // Send the exoplanet id and user email to the applyBookmark endpoint
-          await axios.post('/api/applyBookmark', {
-            userEmail: session.user.email,
-            exoplanetName: exoplanet.pl_name,
-          });
-          console.log('Bookmark applied successfully!');
-          setIsSaveClicked(true);
-        } else {
-          await axios.post('/api/removeBookmark', {
-            userEmail: session.user.email,
-            exoplanetName: exoplanet.pl_name,
-          });
-          console.log('Bookmark removed successfully!');
+        let endpoint;
+
+        if (isSaveClicked) {
+          endpoint = 'removeBookmark';
           setIsSaveClicked(false);
+        } else {
+          endpoint = 'applyBookmark';
+          setIsSaveClicked(true);
         }
-  
-        console.log(response.data); // optional: handle response
+
+        await axios.post(
+          `https://planet-trader.vercel.app/api/${endpoint}`,
+          {
+            userEmail: session.user.email,
+            exoplanetName: exoplanet.pl_name,
+          }
+        );
+
+        console.log(`Bookmark ${endpoint}d successfully!`);
       } catch (error) {
         console.error(error);
       }
     }
   };
-  
 
   return (
     <CardActions>
       {session && (
         <Button size="small" onClick={handleSaveClick}>
-          {isSaveClicked ? "Saved" : "Save"}
+          {isSaveClicked ? 'Saved' : 'Save'}
         </Button>
       )}
       {!session && (
@@ -75,7 +75,7 @@ export default function CardBookmark({ exoplanet }) {
       )}
       <Button
         size="small"
-        href={`/pt/details?id=${exoplanet._id}`}
+        href={`https://planet-trader.vercel.app/pt/details?id=${exoplanet._id}`}
         onClick={() => setSelectedExoplanetId(exoplanet._id)}
       >
         Learn More

@@ -65,8 +65,12 @@ body {
 }
 
 .white-btn{
-    color: white;
+    color: white !important;
     flex-basis: 20%;
+}
+
+.white {
+    color: white !important;    
 }
 
 .link-wrapper a{
