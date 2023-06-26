@@ -27,10 +27,10 @@ export default function ModalBtn({ email }) {
   const handleClose = () => setOpen(false);
   const handleDelete = async () => {
     try {
-      const response = await axios.post('/api/deleteUser', { email });
+      const response = await axios.post('https://planet-trader.vercel.app/api/deleteUser', { email });
       console.log(response.data.message);
       setOpen(false);
-      signOut({ callbackUrl: '/pt/dashboard' });
+      signOut({ callbackUrl: 'https://planet-trader.vercel.app/pt/dashboard' });
     } catch (error) {
       console.error('Error deleting user:', error);
     }
