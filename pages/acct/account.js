@@ -7,8 +7,10 @@ import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
 import LabelValSpaced from '../../components/common/label-value-spaced';
 import Footer from '../../components/layout/footer';
+import ModalBtn from '../../components/common/modalBtn';
 
 export default function account({ exoplanets }) {
+  
 
   const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -18,6 +20,7 @@ export default function account({ exoplanets }) {
     color: theme.palette.text.secondary,
   }));
   const { data: session, status, update } = useSession()
+  
 
   if (status === "authenticated") {
     return (
@@ -25,7 +28,7 @@ export default function account({ exoplanets }) {
         <Header title="Account" />
         <Box sx={{ flexGrow: 1 }} className="grid-mt">
           <Box sx={{ width: '30%', marginLeft: 'auto', marginRight: 'auto' }}>
-            <Stack spacing={2}>
+            <Stack spacing={4}>
               <Item>
                 <LabelValSpaced 
                 label='Name:'
@@ -38,8 +41,11 @@ export default function account({ exoplanets }) {
                   value={session.user.email}
                />
               </Item>
+              <ModalBtn email={session.user.email} />
             </Stack>
+            
           </Box>
+
         </Box>
         <Footer />
       </div>
