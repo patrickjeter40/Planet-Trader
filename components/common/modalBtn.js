@@ -3,6 +3,7 @@ import Modal from '@mui/material/Modal';
 import * as React from 'react';
 import { Box, Typography } from '@mui/material';
 import axios from 'axios';
+import { signOut } from "next-auth/react"
 
 export default function ModalBtn({ email }) {
 
