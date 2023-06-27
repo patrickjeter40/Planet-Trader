@@ -24,31 +24,32 @@ export default function account({ exoplanets }) {
 
   if (status === "authenticated") {
     return (
-      <div className="main">
+      <>
         <Header title="Account" />
-        <Box sx={{ flexGrow: 1 }} className="grid-mt">
-          <Box sx={{ width: '30%', marginLeft: 'auto', marginRight: 'auto' }}>
-            <Stack spacing={4}>
-              <Item>
-                <LabelValSpaced 
-                label='Name:'
-                value={session.user.name}
-                />
-              </Item>
-              <Item>
-               <LabelValSpaced 
-                  label='Email:'
-                  value={session.user.email}
-               />
-              </Item>
-              <ModalBtn email={session.user.email} />
-            </Stack>
+          <div className="main">
             
-          </Box>
-
-        </Box>
+            <Box sx={{ flexGrow: 1 }} className="grid-mt">
+              <Box sx={{ width: '30%', marginLeft: 'auto', marginRight: 'auto' }}>
+                <Stack spacing={4}>
+                  <Item>
+                    <LabelValSpaced 
+                    label='Name:'
+                    value={session.user.name}
+                    />
+                  </Item>
+                  <Item>
+                  <LabelValSpaced 
+                      label='Email:'
+                      value={session.user.email}
+                  />
+                  </Item>
+                  <ModalBtn email={session.user.email} />
+                </Stack>
+              </Box>
+            </Box>
+          </div>
         <Footer />
-      </div>
+      </>
     );
   } else {
     return <div>Loading...</div>; 

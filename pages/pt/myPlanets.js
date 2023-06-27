@@ -20,35 +20,37 @@ export default function Dashboard({ exoplanets }) {
   const [selectedExoplanetId, setSelectedExoplanetId] = useState(null);
 
   return (
-    <div class="main">
+    <>
       <Header title="Dashboard" />
-      <Box sx={{ flexGrow: 1 }} className="grid-mt">
-        <Typography variant="h5">
-          <b>My Saved Planets</b>
-        </Typography>
-        <Grid container spacing={2}>
-          {exoplanets.map((exoplanet) => (
-            <Grid item xs={4} key={exoplanet.id}>
-              <Card sx={{ maxWidth: 500 }}>
-                <Link href={`/pt/details?id=${exoplanet._id}`} onClick={() => setSelectedExoplanetId(exoplanet._id)}>
-                  <CardMedia sx={{ height: 140 }} image="https://drive.google.com/uc?id=1UTmqzmlYJYMFoa4F-QAWPFFiAhdqe1dN" title="" />
-                </Link>
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    <IconStat exoplanet={exoplanet} id="planet" svgurl="http://www.w3.org/2000/svg" alt="planet-icon" statpull="pl_rade" statcontent="x" />
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {exoplanet.Archetype}
-                  </Typography>
-                </CardContent>
-                <CardBookmark exoplanet={exoplanet} />
-              </Card>
+        <div class="main">
+          <Box sx={{ flexGrow: 1 }} className="grid-mt">
+            <Typography variant="h5">
+              <b>My Saved Planets</b>
+            </Typography>
+            <Grid container spacing={2}>
+              {exoplanets.map((exoplanet) => (
+                <Grid item xs={4} key={exoplanet.id}>
+                  <Card sx={{ maxWidth: 500 }}>
+                    <Link href={`/pt/details?id=${exoplanet._id}`} onClick={() => setSelectedExoplanetId(exoplanet._id)}>
+                      <CardMedia sx={{ height: 140 }} image="https://drive.google.com/uc?id=1UTmqzmlYJYMFoa4F-QAWPFFiAhdqe1dN" title="" />
+                    </Link>
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="div">
+                        <IconStat exoplanet={exoplanet} id="planet" svgurl="http://www.w3.org/2000/svg" alt="planet-icon" statpull="pl_rade" statcontent="x" />
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        {exoplanet.Archetype}
+                      </Typography>
+                    </CardContent>
+                    <CardBookmark exoplanet={exoplanet} />
+                  </Card>
+                </Grid>
+              ))}
             </Grid>
-          ))}
-        </Grid>
-      </Box>
+          </Box>
+        </div>
       <Footer />
-    </div>
+    </>
   );
 }
 

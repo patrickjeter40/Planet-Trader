@@ -82,6 +82,10 @@ body {
     flex-grow: 1; 
 }
 
+.header-pad {
+    padding: 0px 13%;    
+}
+
 .fb-15{
     flex-basis: 15%;
 }

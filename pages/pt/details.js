@@ -19,33 +19,35 @@ export default function details({ exoplanets }) {
   };
 
   return (
-    <div class="main">
+    <>
       <Header title="Details" />
-      <div style={{marginTop: "5%"}}>
-        <div class='d-flex justify-between'>
-          <MediaCard 
-            exoplanet={exoplanets} 
-            page="/pt/dashboard"
-            
-          /> 
-          <PlanetDetailsCard 
-            exoplanet={exoplanets} 
-          />
+        <div class="main">
+          <div style={{marginTop: "5%"}}>
+            <div class='d-flex justify-between'>
+              <MediaCard 
+                exoplanet={exoplanets} 
+                page="/pt/dashboard"
+                
+              /> 
+              <PlanetDetailsCard 
+                exoplanet={exoplanets} 
+              />
+            </div>
+            <Button 
+              variant="contained" 
+              id="search-button" 
+              className='' 
+              style={{marginTop:"4%", minWidth:"20%"}}
+              onClick={handleVisitClick}
+              fullWidth='true'
+              color='success'
+              >
+                Visit this Planet
+            </Button>
+          </div>
         </div>
-        <Button 
-          variant="contained" 
-          id="search-button" 
-          className='' 
-          style={{marginTop:"4%", minWidth:"20%"}}
-          onClick={handleVisitClick}
-          fullWidth='true'
-          color='success'
-          >
-            Visit this Planet
-        </Button>
-        <Footer />
-      </div>
-    </div>
+      <Footer />
+    </>
   );
 }
 

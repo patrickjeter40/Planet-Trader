@@ -12,12 +12,16 @@ export default function dashboard({ exoplanets }) {
   }
 
   return (
-    <div class="main">
+    <>
       <Header title="Dashboard" />
-      <SearchBar />
-      <CardGrid exoplanets={exoplanets} gridCaption="Trending Planets" />
-      <Footer />      
-    </div>
+        <div class="main">
+          
+          <SearchBar />
+          <CardGrid exoplanets={exoplanets} gridCaption="Trending Planets" />
+            
+        </div>
+      <Footer />   
+    </>
   );
 }
 
