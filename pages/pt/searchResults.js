@@ -33,14 +33,14 @@ export default function Dashboard({ exoplanets, gridCaption }) {
   }, [query]);
 
   return (
-    <>
+    <div className='main-parent'>
       <Header title="Dashboard" />
         <div className="main">
           <SearchBar textSV={query} />
           <CardGrid exoplanets={fetchedExoplanets} gridCaption="Results" />
         </div>
       <Footer />
-    </>
+    </div>
   );
 }
 

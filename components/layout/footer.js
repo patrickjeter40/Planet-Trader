@@ -24,7 +24,7 @@ export default function Footer({ title }) {
   return (
     <Box 
     sx={{ flexGrow: 1 }}
-    style={{margin: "10% 0 0 0",}}
+    className='footer'
     >
       <AppBar position="static">
         <Container fixed={true} className='d-flex justify-between align-i-center text-dec-no pt-20'>  

@@ -20,7 +20,7 @@ export default function Dashboard({ exoplanets }) {
   const [selectedExoplanetId, setSelectedExoplanetId] = useState(null);
 
   return (
-    <>
+    <div className='main-parent'>
       <Header title="Dashboard" />
         <div class="main">
           <Box sx={{ flexGrow: 1 }} className="grid-mt">
@@ -50,7 +50,7 @@ export default function Dashboard({ exoplanets }) {
           </Box>
         </div>
       <Footer />
-    </>
+    </div>
   );
 }
 

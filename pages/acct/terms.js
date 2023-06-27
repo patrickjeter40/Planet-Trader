@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 export default function terms({ }) {
   
   return (
-    <>
+    <div className='main-parent'>
       <Header title="Dashboard" />
         <div class="main">
           
@@ -81,7 +81,7 @@ export default function terms({ }) {
           </Container>
         </div>
       <Footer />   
-    </>
+    </div>
   );
 }
 

@@ -24,7 +24,7 @@ export default function account({ exoplanets }) {
 
   if (status === "authenticated") {
     return (
-      <>
+      <div className='main-parent'>
         <Header title="Account" />
           <div className="main">
             
@@ -49,7 +49,7 @@ export default function account({ exoplanets }) {
             </Box>
           </div>
         <Footer />
-      </>
+      </div>
     );
   } else {
     return <div>Loading...</div>; 

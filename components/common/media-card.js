@@ -14,7 +14,7 @@ export default function MediaCard({ exoplanet, page }) {
  
   
   return (
-    <Card sx={{ maxWidth: 500, flexBasis: "50%" }}>
+    <Card sx={{ maxWidth: 500, flexBasis: "50%", minHeight:'300px' }}>
       <Link href={page} onClick=''>
         <CardMedia sx={{ height: 140 }} 
           image="https://drive.google.com/uc?id=1UTmqzmlYJYMFoa4F-QAWPFFiAhdqe1dN" 

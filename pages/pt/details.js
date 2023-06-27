@@ -19,7 +19,7 @@ export default function details({ exoplanets }) {
   };
 
   return (
-    <>
+    <div className='main-parent'>
       <Header title="Details" />
         <div class="main">
           <div style={{marginTop: "5%"}}>
@@ -47,7 +47,7 @@ export default function details({ exoplanets }) {
           </div>
         </div>
       <Footer />
-    </>
+    </div>
   );
 }
 

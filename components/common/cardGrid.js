@@ -19,7 +19,7 @@ export default function CardGrid({ exoplanets, gridCaption }) {
         <Grid container spacing={2}>
           {exoplanets.map((exoplanet) => (
             <Grid item xs={4} key={exoplanet.id}>
-              <Card sx={{ maxWidth: 500 }}>
+              <Card sx={{ maxWidth: 500, minHeight:'300px' }}>
               <Link href={`/pt/details?id=${exoplanet._id}`} onClick={() => setSelectedExoplanetId(exoplanet._id)}>
                 <CardMedia sx={{ height: 140 }} 
                     image="https://drive.google.com/uc?id=1UTmqzmlYJYMFoa4F-QAWPFFiAhdqe1dN" 

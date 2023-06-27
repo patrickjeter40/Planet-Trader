@@ -86,6 +86,10 @@ body {
     padding: 0px 13%;    
 }
 
+.h-min-65{
+    min-height: 65px;
+}
+
 .fb-15{
     flex-basis: 15%;
 }
@@ -149,3 +153,18 @@ body {
 .min-40 {
     min-height: 40px;
 }
+
+.main-parent {
+    min-width: 1100px;    
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-direction: column-reverse;
+}
+

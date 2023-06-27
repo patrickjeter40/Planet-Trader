@@ -12,7 +12,7 @@ export default function dashboard({ exoplanets }) {
   }
 
   return (
-    <>
+    <div className='main-parent'>
       <Header title="Dashboard" />
         <div class="main">
           
@@ -20,8 +20,8 @@ export default function dashboard({ exoplanets }) {
           <CardGrid exoplanets={exoplanets} gridCaption="Trending Planets" />
             
         </div>
-      <Footer />   
-    </>
+      <Footer className='footer' />   
+    </div>
   );
 }
 
