@@ -12,7 +12,7 @@ import React, { useEffect, useState } from 'react';
 export default function CardGrid({ exoplanets, gridCaption }) {
   const [selectedExoplanetId, setSelectedExoplanetId] = useState(null);
   return (
-  <Box sx={{ flexGrow: 1 }} className="grid-mt">
+  <Box sx={{ flexGrow: 1 }} className="grid-mt mb-50">
         <Typography variant='h5'>
             <b>{gridCaption}</b>
         </Typography>

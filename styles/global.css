@@ -114,6 +114,10 @@ body {
     margin-bottom: 15px;
 }
 
+.mb-50 {
+    margin-bottom: 50px;
+}
+
 .mw-200 {
     max-width: 200px;
 }
