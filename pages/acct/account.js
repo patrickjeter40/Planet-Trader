@@ -43,7 +43,7 @@ export default function account({ exoplanets }) {
                       value={session.user.email}
                   />
                   </Item>
-                  <ModalBtn email={session.user.email} />
+                  
                 </Stack>
               </Box>
             </Box>
