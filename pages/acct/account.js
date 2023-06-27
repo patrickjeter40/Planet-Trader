@@ -28,7 +28,7 @@ export default function account({ exoplanets }) {
         <Header title="Account" />
           <div className="main">
             
-            <Box sx={{ flexGrow: 1 }} className="grid-mt">
+            <Box className="grid-mt">
               <Box sx={{ width: '30%', marginLeft: 'auto', marginRight: 'auto' }}>
                 <Stack spacing={4}>
                   <Item>

@@ -23,7 +23,7 @@ export default function Dashboard({ exoplanets }) {
     <div className='main-parent'>
       <Header title="Dashboard" />
         <div class="main">
-          <Box sx={{ flexGrow: 1 }} className="grid-mt">
+          <Box className="grid-mt">
             <Typography variant="h5">
               <b>My Saved Planets</b>
             </Typography>
