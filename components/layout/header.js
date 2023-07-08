@@ -83,14 +83,13 @@ export default function Header({ title }) {
               href={"/pt/dashboard"}
               style={{margin: "auto auto auto auto"}}
             >
-              <Image
-                src="https://imgur.com/a/Ep5vzCt"
+              <img
+                src="https://drive.google.com/uc?id=1GgVBerg9ol99O1dsjNIeQZTK3YM6No9c"
                 height={45} // Desired size with correct aspect ratio
                 width={255} // Desired size with correct aspect ratio
                 alt="Planet Trader Logo"
                 quality={100}
-                style={{objectFit: "none", borderRadius: "30px"}}
-              />
+                style={{objectFit: "cover", borderRadius: "30px"}}/>
             </Link>
           </div>
 
