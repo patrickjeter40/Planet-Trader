@@ -84,7 +84,7 @@ export default function Header({ title }) {
               style={{margin: "auto auto auto auto"}}
             >
               <Image
-                src="https://drive.google.com/uc?id=1GgVBerg9ol99O1dsjNIeQZTK3YM6No9c"
+                src="https://imgur.com/a/Ep5vzCt"
                 height={45} // Desired size with correct aspect ratio
                 width={255} // Desired size with correct aspect ratio
                 alt="Planet Trader Logo"
