@@ -45,7 +45,7 @@ export default function Footer({ title }) {
               style={{margin: "auto auto auto auto"}}
             >
               <img
-                src="https://dl.dropboxusercontent.com/scl/fi/4fx7a09heoiv5j5ds5kak/planetlogo-1.PNG"
+                src="https://www.dropbox.com/scl/fi/4fx7a09heoiv5j5ds5kak/planetlogo-1.PNG?rlkey=2lsj8miiqt3qo1j80hnf25ghs&raw=1"
                 height={45} // Desired size with correct aspect ratio
                 width={255} // Desired size with correct aspect ratio
                 alt="Planet Trader Logo"
