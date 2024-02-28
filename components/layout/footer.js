@@ -45,7 +45,7 @@ export default function Footer({ title }) {
               style={{margin: "auto auto auto auto"}}
             >
               <img
-                src="https://previews.dropbox.com/p/thumb/ACL9PH7_TxuHH4bpd0cwj8vLJ3X1tBzdo8Nl7u3jc4APWzj5waX7a9fVmqf1QuArT0-ga0mP7HPZSc7Eqak2hIcV1IguO-0t0tinwPx5hokv6UBiLd-NYqdrpns9ffz0r35Z-1MY-qG8_HJpMhEkzv2CVaScaHDjrDon45FiRQNE6UwchrGhaX5Y824uOIyYTGIYTUoXbc0t3XJI1S29F6bx4NXzpXU2GXiy8UF0kXPZv7XWtvw79QMAIsIIYRLiQRY-azDir7BWnkNhXv_1ZEHxYLp0lZuGeR-WtpwIfJxjyaDutzMqzU8X5RYgJICOSags86uRjaiiT4PzaZPbi0WX/p.png"
+                src="https://www.dropbox.com/scl/fi/4fx7a09heoiv5j5ds5kak/planetlogo-1.PNG?rlkey=2lsj8miiqt3qo1j80hnf25ghs&dl=0"
                 height={45} // Desired size with correct aspect ratio
                 width={255} // Desired size with correct aspect ratio
                 alt="Planet Trader Logo"

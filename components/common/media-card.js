@@ -17,7 +17,7 @@ export default function MediaCard({ exoplanet, page }) {
     <Card sx={{ maxWidth: 500, flexBasis: "50%", minHeight:'300px' }}>
       <Link href={page} onClick=''>
         <CardMedia sx={{ height: 140 }} 
-          image="https://previews.dropbox.com/p/thumb/ACIpgfa3v1304aXl4xArVjXAFEqaKCq_EpxcZb3IGyl68SYZFGgFx0GJZld5ELRIHLe6xOQaHlTvPfi8L2LKfCANp8FRznjwQpSRjnU4RrrWvqCuyLTkG1YaDg2ELMNrGoUOCT3dAg02aOKm7r9IwDEK5Y7hPcFiox5CtyIGOmyV7NVQ5D7jE6zIjeysISBAd02z78lop_UQzshWJjFED0uNnVBkjqc9YeUgSM1vDhodC1pYYAqUAS6a8KuSkxPm_aec4udAU1JWIdfnpf6qGUD-xb8ZDv-5v-n6tqMCQvW223pFhwme77qsJ9jCztLe5vuQD4zl-B-asUX6tfpb-OvO/p.jpeg" 
+          image="https://www.dropbox.com/scl/fi/yv3s24r5uk3f5xjaioug5/exoplanets-2.jpg?rlkey=x8wg22glcbc98ndozj68zwvfd&dl=0" 
           title="" 
           
         />

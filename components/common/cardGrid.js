@@ -22,7 +22,7 @@ export default function CardGrid({ exoplanets, gridCaption }) {
               <Card sx={{ maxWidth: 500, minHeight:'300px' }}>
               <Link href={`/pt/details?id=${exoplanet._id}`} onClick={() => setSelectedExoplanetId(exoplanet._id)}>
                 <CardMedia sx={{ height: 140 }} 
-                    image="https://previews.dropbox.com/p/thumb/ACIjjYFbXVsXVmHTlTknkcxc-6QSk1RoUW1XCsEZqgS4XmYF737f9JTq9hq64G6B1xnceVm_DWch9bl7uO78DEjKrc0MX_fnKrXZQ4lGFstIiXzjWAB4MnUms6tjJg5CIm8DuV5qrN-APtSqnkHkHdUEim0CLRuud96jX6eYGMBL9I_8MNVk96J9ACGcB00jj2VFaWRgyAGgn1m0mltW3LVcRiBeB-Lm2ap3sbZiEYMXgLfw_2fcRJx6I_V4SSE7xVxYsRrZZWriKUGLYwX7EC8oi_BC1XE8fMlZz0ySA9Pm72HOVP3JWyW4R5WuzF7KnCbY9aKG-8yXfKqPheZqCG9L/p.jpeg" 
+                    image="https://www.dropbox.com/scl/fi/yv3s24r5uk3f5xjaioug5/exoplanets-2.jpg?rlkey=x8wg22glcbc98ndozj68zwvfd&dl=0" 
                     title="" 
                 />
               </Link>
